@@ -11,11 +11,13 @@ class UsersAdmin(admin.ModelAdmin):
     list_display = ('id','username','password','email','phone_number',)
 
 class TestsAdmin(admin.ModelAdmin):
-    list_display = ('id','question','variant1','variant2','variant3','variant4','lesson')
-
+   pass
 class ResultsAdmin(admin.ModelAdmin):
-    list_display = ('id','all_questions','true_ans','false_ans','test_date',)
+   pass
 
+class SubCategoryAdmin(admin.ModelAdmin):
+    pass
+admin.site.register(SubCategory,SubCategoryAdmin)
 admin.site.register(Lessons,LessonsAdmin)
 admin.site.register(Users,UsersAdmin)
 admin.site.register(Category,CategoryAdmin)

@@ -1,26 +1,19 @@
+{% load static %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-
-<!--
----- Clean html template by http://WpFreeware.com
----- This is the main file (index.html).
----- You are allowed to change anything you like. Find out more Awesome Templates @ wpfreeware.com
----- Read License-readme.txt file to learn more.
--->
-
 	<head>
 		<title>Welcome to my site</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!--Oswald Font -->
 		<link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" type="text/css" href="css/tooltipster.css" />
+		<link rel="stylesheet" type="text/css" href="{% static 'css/tooltipster.css'%}" />
 		<!-- home slider-->
-		<link href="css/pgwslider.css" rel="stylesheet">
+		<link href="{% static 'css/pgwslider.css'%}" rel="stylesheet">
 		<!-- Font Awesome -->
-		<link rel="stylesheet" href="css/font-awesome.min.css">
-		<link href="style.css" rel="stylesheet" media="screen">
-		<link href="responsive.css" rel="stylesheet" media="screen">
+		<link rel="stylesheet" href="{% static 'css/font-awesome.min.css'%}">
+		<link href="{% static 'style.css'%}" rel="stylesheet" media="screen">
+		<link href="{% static 'responsive.css'%}" rel="stylesheet" media="screen">
 	</head>
 
 	<body>
@@ -70,7 +63,9 @@
 
 				<div class="clearfix main_content floatleft">
 
+					{% block content %}
 
+					{% endblock %}
 					<div class="pagination">
 						<nav>
 							<ul>
@@ -84,6 +79,7 @@
 						</nav>
 					</div>
 				</div>
+
 				<div class="clearfix sidebar_container floatright">
 					<div class="clearfix single_sidebar category_items">
 						<h2>Categories</h2>
@@ -171,14 +167,14 @@
 			</div>
 		</section>
 
-		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.0.min.js"></script>
-		<script type="text/javascript" src="js/jquery.tooltipster.min.js"></script>
+		<script type="text/javascript" src="{% static 'http://code.jquery.com/jquery-1.7.0.min.js'%}"></script>
+		<script type="text/javascript" src="{% static 'js/jquery.tooltipster.min.js'%}"></script>
 		<script type="text/javascript">
 			$(document).ready(function() {
 				$('.tooltip').tooltipster();
 			});
 		</script>
-		 <script type="text/javascript" src="js/selectnav.min.js"></script>
+		 <script type="text/javascript" src="{% static 'js/selectnav.min.js'%}"></script>
 		<script type="text/javascript">
 			selectnav('nav', {
 			  label: '-Navigation-',
@@ -186,7 +182,7 @@
 			  indent: '-'
 			});
 		</script>
-		<script src="js/pgwslider.js"></script>
+		<script src="{% static 'js/pgwslider.js'%}"></script>
 		<script type="text/javascript">
 			$(document).ready(function() {
 				$('.pgwSlider').pgwSlider({
@@ -196,14 +192,9 @@
 				});
 			});
 		</script>
-		<script type="text/javascript" src="js/placeholder_support_IE.js"></script>
+		<script type="text/javascript" src="{% static 'js/placeholder_support_IE.js'%}"></script>
 
-<!--
----- Clean html template by http://WpFreeware.com
----- This is the main file (index.html).
----- You are allowed to change anything you like. Find out more Awesome Templates @ wpfreeware.com
----- Read License-readme.txt file to learn more.
--->
+
 
 	</body>
 </html>
