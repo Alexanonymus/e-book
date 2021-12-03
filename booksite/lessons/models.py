@@ -57,6 +57,9 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
+class SubCategory(models.Model):
+    name = models.CharField(max_length=200)
+    category = models.ForeignKey('Category', on_delete=models.CASCADE,)
 
 class Lessons(models.Model):
     thema = models.CharField(max_length=250)
@@ -64,8 +67,10 @@ class Lessons(models.Model):
     author = models.CharField(max_length=150)
     date = models.DateField(auto_now_add=True)
 
+    subcategory = models.ForeignKey('SubCategory',on_delete=models.CASCADE,)
 
-    category = models.ForeignKey('Category',on_delete = models.CASCADE,)
+
+
 
     def __str__(self):
         return self.thema
@@ -88,8 +93,8 @@ class Results(models.Model):
     false_ans = models.IntegerField()
     test_date = models.DateField(auto_now_add=True)
 
-    username = models.ManyToManyField('Users',)
-    test = models.ManyToManyField('Tests',)
+    username = models.ForeignKey('Users',on_delete=models.CASCADE,)
+    lesson = models.ForeignKey('Lessons',on_delete=models.CASCADE, blank = True, null=True)
 
     def __str__(self):
         return self.username

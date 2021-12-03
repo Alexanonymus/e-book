@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import *
 
 class LessonsAdmin(admin.ModelAdmin):
-    list_display = ('id','thema','content','author','date','category')
+    list_display = ('id','thema','content','author','date',)
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('id','name',)
