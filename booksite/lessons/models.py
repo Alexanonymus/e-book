@@ -2,6 +2,8 @@ from django.db import models
 
 # Create your models here.
 # bizda asosan quyidagi modellar bo`ladi
+from django.urls import reverse
+
 '''
 Users
     username
@@ -12,6 +14,10 @@ Users
 ============   
 # Category
     name
+=========
+#SubCategory
+    name
+    category
 ==========
 #lessons
 
@@ -20,7 +26,7 @@ Users
     author
     date
     
-    category
+    SubCategory
 ============
 # tests
      question
@@ -57,6 +63,9 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('category', kwargs={'category_id': self.pk})
 class SubCategory(models.Model):
     name = models.CharField(max_length=200)
     category = models.ForeignKey('Category', on_delete=models.CASCADE,)
@@ -93,8 +102,8 @@ class Results(models.Model):
     false_ans = models.IntegerField()
     test_date = models.DateField(auto_now_add=True)
 
-    username = models.ForeignKey('Users',on_delete=models.CASCADE,)
-    lesson = models.ForeignKey('Lessons',on_delete=models.CASCADE, blank = True, null=True)
+    username = models.ForeignKey('Users', on_delete=models.CASCADE,)
+    lesson = models.ForeignKey('Lessons', on_delete=models.CASCADE, blank = True, null=True)
 
     def __str__(self):
         return self.username

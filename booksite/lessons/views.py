@@ -7,3 +7,8 @@ from django.views.generic import ListView
 class LessonsViews(ListView):
     model = Lessons
     template_name = 'lessons/index.html'
+
+
+class CategoryViews(ListView):
+    model = Category
+    template_name = 'lessons/category.html'
