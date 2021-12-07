@@ -1,0 +1,9 @@
+<div class="{{subcategory_class}}">
+    <div class="sidebar_title"><h2>Mavzular:</h2></div>
+<ul>
+    {% for item in subcategory %}
+    <li><a href="{{ item.get_absolute_url2 }}">{{ item.name }}</a></li>
+    {% endfor %}
+
+</ul>
+</div>

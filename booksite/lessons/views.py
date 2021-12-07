@@ -11,4 +11,9 @@ class LessonsViews(ListView):
 
 class CategoryViews(ListView):
     model = Category
-    template_name = 'lessons/category.html'
+    template_name = 'lessons/index.html'
+
+
+class SubCategoryViews(ListView):
+    model = SubCategory
+    template_name = 'lessons/index.html'

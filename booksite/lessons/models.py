@@ -66,9 +66,13 @@ class Category(models.Model):
 
     def get_absolute_url(self):
         return reverse('category', kwargs={'category_id': self.pk})
+
 class SubCategory(models.Model):
     name = models.CharField(max_length=200)
     category = models.ForeignKey('Category', on_delete=models.CASCADE,)
+
+    def get_absolute_url2(self):
+        return reverse('subcategory',kwargs={'subcategory_id': self.pk})
 
 class Lessons(models.Model):
     thema = models.CharField(max_length=250)
