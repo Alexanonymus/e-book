@@ -1,9 +1,0 @@
-
-<div class="{{ menu_class }}">
-    <h2>Categories</h2>
-    <ul>
-        {% for item in categories %}
-        <li class="cat-item"><a href="{{ item.get_absolute_url }}">{{ item.name }}</a>(12)</li>
-        {% endfor %}
-    </ul>
-</div>
