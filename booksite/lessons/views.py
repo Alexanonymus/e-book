@@ -27,7 +27,7 @@ from .models import *
 #     paginate_by = 1
 class CategoryListViews(ListView):
     model = Category
-    template_name = 'lessons/base.html'
+    template_name = 'lessons/index.html'
     context_object_name = 'categories'
 
 class SubcategoryListViews(DetailView):
