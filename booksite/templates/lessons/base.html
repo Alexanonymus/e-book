@@ -2,9 +2,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 	<head>
+		<meta charset="utf-8">
 		<title>Welcome to my site</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
 		<!--Oswald Font -->
 		<link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="{% static 'css/tooltipster.css'%}">
@@ -14,6 +16,7 @@
 		<link rel="stylesheet" href="{% static 'css/font-awesome.min.css'%}">
 		<link href="{% static 'style.css'%}" rel="stylesheet" media="screen">
 		<link href="{% static 'responsive.css'%}" rel="stylesheet" media="screen">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	</head>
 
 	<body>
@@ -21,7 +24,7 @@
 			<div class="wrapper header">
 				<div class="clearfix header_top">
 					<div class="clearfix logo floatleft">
-						<a href=""><h1><span>Yellow</span> Blog</h1></a>
+						<a href=""><h1><span>DISKRET</span> MATEMATIKA</h1></a>
 					</div>
 					<div class="clearfix search floatright">
 						<form>
@@ -41,7 +44,7 @@
 									{% endfor %}
 								</ul>
 							</li>
-							<li><a href="">Test ishlash</a></li>
+							<li><a href="{% url 'tests_detail' %}">Test ishlash</a></li>
 							<li><a href="">Reyting</a></li>
 							<li><a href="">About us</a></li>
 							<li><a href="">Contact us</a></li>
@@ -134,6 +137,10 @@
 			});
 		</script>
 		<script type="text/javascript" src="{% static 'js/placeholder_support_IE.js'%}"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 
 
 

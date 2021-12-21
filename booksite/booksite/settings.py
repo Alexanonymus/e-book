@@ -78,9 +78,9 @@ WSGI_APPLICATION = 'booksite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'ebook2',
+        'NAME': 'ebook',
         'USER': 'postgres',
-        'PASSWORD': '2409',
+        'PASSWORD': '224444',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }

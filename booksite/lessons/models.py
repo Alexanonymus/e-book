@@ -74,6 +74,9 @@ class SubCategory(models.Model):
     def get_absolute_url2(self):
         return reverse('subcategory',kwargs={'subcategory_id': self.pk})
 
+    def __str__(self):
+        return self.name
+
 class Lessons(models.Model):
     thema = models.CharField(max_length=250)
     content = models.TextField(blank=True)
@@ -109,6 +112,5 @@ class Results(models.Model):
     username = models.ForeignKey('Users', on_delete=models.CASCADE,)
     lesson = models.ForeignKey('Lessons', on_delete=models.CASCADE, blank = True, null=True)
 
-    def __str__(self):
-        return self.username
+
 

@@ -37,8 +37,10 @@ class SubcategoryListViews(DetailView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['subcategory'] = SubCategory.objects.all()
+        pk = self.kwargs['pk']
+        context['subcategory'] = SubCategory.objects.filter(category__id=pk)
         context['categories'] = Category.objects.all()
+        context['lesson'] = Lessons.objects.filter(subcategory__id=pk)
         return context
 
 
@@ -51,5 +53,10 @@ class SubcategoryDetailView(DetailView):
         pk = self.kwargs['pk']
         context['subcategory'] = SubCategory.objects.all()
         context['categories'] = Category.objects.all()
-        context['lesson'] = Lessons.objects.get(subcategory__id = pk)
+        context['lesson'] = Lessons.objects.get(subcategory__id=pk)
         return context
+
+class TestListViews(ListView):
+    model = Tests
+    template_name = 'lessons/tests.html'
+    context_object_name = 'test'

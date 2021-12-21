@@ -4,5 +4,5 @@ urlpatterns = [
     path('', CategoryListViews.as_view(),name='home'),
     path('<int:pk>', SubcategoryListViews.as_view(),name='category_detail'),
     path('lesson/<int:pk>', SubcategoryDetailView.as_view(),name='subcategory_detail'),
-
+    path('test', TestListViews.as_view(), name='tests_detail'),
 ]

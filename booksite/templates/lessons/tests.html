@@ -16,17 +16,22 @@
 								</div>
 							</div>
 							<div class="clearfix post_detail">
-
-                                {% for item in lesson  %}
-								<h2><a href=""> {{item.theme}}</a></h2>
-
-								<div class="clearfix post_excerpt">
-
-									<p>{{item.content}} </p>
+								<form>
+                                {% for item in test  %}
+									<h2> {{item.question}}</h2>
+									<input type="radio" id="html" name="fav_language" value="HTML">
+									<label for="html">{{item.variant1}}</label><br>
+									<input type="radio" id="html" name="fav_language" value="HTML">
+									<label for="html">{{item.variant2}}</label><br>
+									<input type="radio" id="html" name="fav_language" value="HTML">
+									<label for="html">{{item.variant3}}</label><br>
+									<input type="radio" id="html" name="fav_language" value="HTML">
+									<label for="html">{{item.variant4}}</label><br>
+									<div class="clearfix post_excerpt">
+									<p>{{item.lesson}} </p>
 								</div>
-								<a href="">Continue Reading</a>
                                 {% endfor %}
-
+								</form>
 							</div>
 						</div>
 
